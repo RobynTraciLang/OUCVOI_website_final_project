@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:wght@100&family=Roboto+Flex:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+        rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+    <title>Donate | The Voices of Inspiration | OUC</title>
+</head>
+
+<body>
+    <div class="whole-container-box">
+        <div class="header">
+            <a href="/"><img style="width: 35%; text-align: left; margin-left: 20px;" src="/static/assets/icons/VOI_logo.png" alt=""></a>
+            <a href="/">HOME</a>
+            <a href="/about">ABOUT</a>
+            <a href="/director">DIRECTOR</a>
+            <a href="/events">EVENTS</a>
+            <a href="/donate">DONATE</a>
+            <a href="/faq">FAQ</a>
+            <a href="/shop">SHOP</a>
+            <a href="/login">LOGIN</a>
+            <a href="/register">JOIN</a>
+            <a href="/contact">CONTACT</a>
+            {% if "member_id" in session  %}
+                <a style="color: yellow; font-weight: bold;" href="logout">LOGOUT</a>
+            {% endif %}
+        </div>
+        <div class="text" class="text-center">
+            <h1 style="margin: 20px;">Donate</h1><br>
+            <h2 style="color: yellow;">You can donate to VOI via our cashapp at $oucvoi.</h2>
+            <br>
+            <strong>Per IRS requirements, The OUC Voices of Inspiration will be issuing tax receipts for all contributions.</strong>
+            <br>
+            <strong>Donations are fully tax deductible. The Oakwood University Church is a registered 501(c)(3) organization. EIN#: 47-2327573</strong>
+            <p>Donation receipts will be mailed/emailed to you. If you have not received your donation receipts after Feb 10, please contact our <a href="mailto:jetblackkinks@gmail.com">corresponding secretary</a>.</p>
+            <button style="margin: 20px;" type="button" class="btn btn-info"><a class="a-tags" href="/contact">Questions? Contact the Donations Team!</a></button>
+            <h3 style="padding: 20px;">Thank you for your support!!</h3 style="padding: 20px;">
+        </div>
+        <br>
+        <br>
+        <hr style="color: white;">
+        <div class="footer">
+            <div>
+                <br>
+                <p>MY ACCOUNT</p>
+                <a class="a-tags" href="/login">Sign In</a><br>
+                <a class="a-tags" href="/register">Register</a><br>
+                <br>
+                <p>ABOUT</p>
+                <a class="a-tags" href="/about">Who We Are</a><br>
+                <a class="a-tags" href="/events#past_performances">Past Performances</a>
+            </div>
+            <br>
+            <div>
+                <p>HELP</p>
+                <a class="a-tags" href="/contact">Contact Us</a><br>
+                <br>
+                <p>LEGAL STUFF</p>
+                <a class="a-tags" href="/legal">Terms of Use</a><br>
+                <a class="a-tags" href="/legal#L2">Privacy Policy</a>
+            </div>
+            <br>
+            <p>Copyright Voices of Inspiration. All Rights Reserved</p>
+            <br>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:wght@100&family=Roboto+Flex:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+        rel="stylesheet">
+    <title>Join | The Voices of Inspiration | OUC</title>
+</head>
+
+<body>
+    <div class="whole-container-box">
+        <div class="header">
+            <a href="/"><img style="width: 35%; text-align: left; margin-left: 20px;" src="/static/assets/icons/VOI_logo.png" alt=""></a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/">HOME</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/about">ABOUT</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/director">DIRECTOR</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/events">EVENTS</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/donate">DONATE</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/faq">FAQ</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/shop">SHOP</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/login">LOGIN</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/register">JOIN</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/contact">CONTACT</a>
+        </div>
+        <div class="text">
+            <h1 style="padding: 50px;">Want to sing with us? <br><br> <span style="color: yellow;">Register below and join TODAY!</span></h1>
+            <hr>
+            <div class="login">
+                {% with messages = get_flashed_messages(category_filter=['not_logged_in']) %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <form action="/register" method="post">
+                    <h2>Register</h2><br>
+                    {% with messages = get_flashed_messages(category_filter=['register']) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p style="color: yellow;">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <div>
+                        <label for="">First Name:</label><br>
+                        <input class="input2" type="text" name="first_name"><br>
+                    </div>
+                    <div>
+                        <label for="">Last Name:</label><br>
+                        <input class="input2" type="text" name="last_name"><br>
+                    </div>
+                    <div>
+                        <label for="">Role:</label><br>
+                        <select class="input2" name="role" id="role">
+                            <option value="choose_an_option">Choose an option...</option>
+                            <option value="singer">Singer</option>
+                            <option value="volunteer">Volunteer</option>
+                        </select><br>
+                    </div>
+                    <div>
+                        <label for="voice_part">Voice Part:</label><br>
+                        <select class="input2" name="voice_part" id="voice_part">
+                            <option value="choose_an_option">Choose an option...</option>
+                            <option value="soprano">Soprano</option>
+                            <option value="alto">Alto</option>
+                            <option value="tenor">Tenor</option>
+                        </select><br>
+                    </div>
+                    <div>
+                        <label for="phone">Phone:</label><br>
+                        <input class="input2" type="tel" name="phone"><br>
+                    </div>
+                    <div>
+                        <label for="">Email:</label><br>
+                        <input class="input2" type="text" name="email"><br>
+                    </div>
+                    <div>
+                        <label for="">Password:</label><br>
+                        <input class="input2" type="password" name="password"><br>
+                    </div>
+                    <div>
+                        <label for="">Confirm Password:</label><br>
+                        <input class="input2" type="password" name="confirm_password"><br><br>
+                    </div>
+                    <input style="background-color: yellow; padding: 5px; border-radius: 5px;" type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="footer">
+            <div>
+                <br>
+                <p>MY ACCOUNT</p>
+                <a class="a-tags" href="/login">Sign In</a><br>
+                <a class="a-tags" href="/register">Register</a><br>
+                <br>
+                <p>ABOUT</p>
+                <a class="a-tags" href="/about">Who We Are</a><br>
+                <a class="a-tags" href="/events#past_performances">Past Performances</a>
+            </div>
+            <br>
+            <div>
+                <p>HELP</p>
+                <a class="a-tags" href="/contact">Contact Us</a><br>
+                <br>
+                <p>LEGAL STUFF</p>
+                <a class="a-tags" href="/legal">Terms of Use</a><br>
+                <a class="a-tags" href="/legal#L2">Privacy Policy</a>
+            </div>
+            <br>
+            <p>Copyright Voices of Inspiration. All Rights Reserved</p>
+            <br>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

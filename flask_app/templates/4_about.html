@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:wght@100&family=Roboto+Flex:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+        rel="stylesheet">
+    <title>Who We Are | The Voices of Inspiration | OUC</title>
+</head>
+
+<body>
+    <div class="whole-container-box">
+        <div class="header">
+            <a href="/"><img style="width: 35%; text-align: left; margin-left: 20px;" src="/static/assets/icons/VOI_logo.png" alt=""></a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/">HOME</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/about">ABOUT</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/director">DIRECTOR</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/events">EVENTS</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/donate">DONATE</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/faq">FAQ</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/shop">SHOP</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/login">LOGIN</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/register">JOIN</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/contact">CONTACT</a>
+            {% if "member_id" in session  %}
+                <a style="color: yellow; font-weight: bold;" href="logout">LOGOUT</a>
+            {% endif %}
+        </div>
+        <div class="title">
+            <p class="main-title">Who We Are</p>
+        </div>
+        <img id="" src="\static\assets\voi-pics\voi20-black-background-cropped.png" alt="Stephen Manders directing VOI">
+        <div class="text">
+            <h2 style="padding: 20px;">Current members of Voices of Inspiration:</h2 style="padding: 20px;">
+            <br>
+            {% for member in members %}
+                {% if member.role == "director" %}
+                    <strong>Director</strong>
+                    <p>{{member.first_name}} {{member.last_name}}</p><br>
+                {% endif %}
+            {% endfor %}
+
+            <strong>Choir Admins</strong>
+            {% for member in members %}
+                {% if member.role == "choir admin" %}
+                    <p>{{member.first_name}} {{member.last_name}}</p>
+                {% endif %}
+            {% endfor %}
+            <br>
+            <strong>Members</strong>
+            {% for member in members %}
+                {% if member.role == "singer" and "volunteer" %}
+                    <p>{{member.first_name}} {{member.last_name}}</p>
+                {% endif %}
+            {% endfor %}
+
+            <br><br><br>
+
+            <p>Sydney Reynolds</p>
+            <p>Tamela Hammond</p>
+            <p>Gregory Allen Battle</p>
+            <p>Minniecia Winston</p>
+            <p>Denise Winston</p>
+            <p>Kennee Moore</p>
+            <p>Autumn Re' Byers</p>
+            <p>Lilith Whyte</p>
+            <p>Marilyn Monette</p>
+            <p>Eric Darren Hughes, Sr.</p>
+            <p>Keisha Fortson</p>
+            <p>Regine Valcin</p>
+            <p>Billy Clyde Woods</p>
+            <p>Shayla Rene' Little</p>
+            <p>Nikki Braswell</p>
+            <p>Kimberly Turner Jacobs</p>
+            <p>Darlene Squires-Richardson</p>
+            <p>Kem Roper</p>
+            <p>Tiffany Richardson</p>
+            <p>Lyndon Carriger</p>
+            <p>Theron "Therry" Thomas</p>
+            <p>Chasity Richardson</p>
+            <p>Denise McCall</p>
+            <p>Leslie Austin</p>
+            <p>Gianna Snell</p>
+            <p>Adrienne Awoniyi-Reid</p>
+            <p>Paulette Donna Gates</p>
+            <p>Marcia Burnette</p>
+            <p>Vera Lopez</p>
+            <p>Cicely Thomas</p>
+            <p>Hadassah Dalrymple</p>
+            <p>Danielle Mounter Byrd</p>
+            <p>Janet Jackson</p>
+            <p>Jacqueline Battle</p>
+            <p>Paula Jacobs</p>
+            <p>Eboni Murraine</p>
+            <p>Lamont Lockett Sr.</p>
+            <p>Lisa Dalrymple</p>
+            <p>Marissa Morris</p>
+            <p>LaKeisha Williams</p>
+            <p>Linelle Johnson</p>
+            <p>Juliet Wise</p>
+            <p>Adana Wilson</p>
+            <p>Shedria Petty</p>
+            <br>
+            <br>
+            <button style="background-color: yellow; padding: 7px; border-radius: 5px;"><a style="text-decoration: none; color: black; font-weight: bold;" href="/login">JOIN TODAY!</a></button>
+            <br>
+            <br><br>
+        </div>
+        <hr>
+        <div class="footer">
+            <div>
+                <br>
+                <p>MY ACCOUNT</p>
+                <a class="a-tags" href="/login">Sign In</a><br>
+                <a class="a-tags" href="/register">Register</a><br>
+                <br>
+                <p>ABOUT</p>
+                <a class="a-tags" href="/about">Who We Are</a><br>
+                <a class="a-tags" href="/events#past_performances">Past Performances</a>
+            </div>
+            <br>
+            <div>
+                <p>HELP</p>
+                <a class="a-tags" href="/contact">Contact Us</a><br>
+                <br>
+                <p>LEGAL STUFF</p>
+                <a class="a-tags" href="/legal">Terms of Use</a><br>
+                <a class="a-tags" href="/legal#L2">Privacy Policy</a>
+            </div>
+            <br>
+            <p>Copyright Voices of Inspiration. All Rights Reserved</p>
+            <br>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

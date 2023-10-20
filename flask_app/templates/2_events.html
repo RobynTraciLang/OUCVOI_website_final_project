@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:wght@100&family=Roboto+Flex:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+        rel="stylesheet">
+    <title>Events | The Voices of Inspiration | OUC</title>
+</head>
+
+<body>
+    <div class="whole-container-box">
+        <div class="header">
+            <a href="/"><img style="width: 35%; text-align: left; margin-left: 20px;" src="/static/assets/icons/VOI_logo.png" alt=""></a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/">HOME</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/about">ABOUT</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/director">DIRECTOR</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/events">EVENTS</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/donate">DONATE</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/faq">FAQ</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/shop">SHOP</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/login">LOGIN</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/register">JOIN</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/contact">CONTACT</a>
+            {% if "member_id" in session  %}
+                <a style="color: yellow; font-weight: bold;" href="logout">LOGOUT</a>
+            {% endif %}
+        </div>
+        <div class="title">
+            <p class="main-title">Upcoming Events</p>
+        </div>
+        <img id="" src="\static\assets\voi-pics\voi4.png" alt="male soloist singing with VOI">
+        <h1 style="padding: 20px;" class="text">See what's coming up next for VOI!</h1 style="padding: 20px;">
+        <br>
+        {% for event in events %}
+
+                <div class="text">
+                    <h2 style="color: yellow;">{{event.event_name}}</h2>
+                    <p>{{event.location_name}}</p>
+                    <p>{{event.address}}</p>
+                    <p>{{event.start_date.strftime('%B %d, %Y')}} at {{event.start_time}}</p><br><br><br>
+                </div>
+
+        {% endfor %}
+        <br>
+        <br>
+        <h2 style="padding: 50px;" class="text"><a class="a-tags" id="past_performances" name="past_performances">View Past Performances</a></h2>
+        <div class="text">
+            <img class="small_image" src="/static/assets/voi-pics/voi3.png" alt="image of VOI singing"><br><br>
+            <a style="padding: 20px;"" class="a-tags" href="https://youtu.be/fxWNJuX6LrQ?si=1G7oOLSCz9q6T-Ns" target="_blank">"Lord You've Been So Faithful" - January 6, 2023</a>
+            <br>
+            <br>
+            <br>
+            <img class="small_image" src="/static/assets/voi-pics/voi2.png" alt="image of VOI singing"><br><br>
+            <a style="padding: 20px;" class="a-tags" href="https://youtu.be/b0GMiG6Yhws?si=0V98qXOYsyExI4v7" target="_blank">"Praise the Lord All Ye Nations" - March 24, 2023</a>
+            <br>
+            <br>
+            <br>
+            <img class="small_image" src="/static/assets/voi-pics/voi9-gianna.png" alt="image of VOI singing"><br><br>
+            <a style="padding: 20px;" class="a-tags" href="https://youtu.be/dBmnrcRD9J8?si=PToEiqlCCAqgPfCO" target="_blank">"God Be Praised"/"Things Will Work Out For Me" (feat. Gianna Snell) - April 28, 2023</a>
+            <br>
+            <br>
+            <br>
+            <img class="small_image" src="/static/assets/voi-pics/voi7.png" alt="image of VOI singing"><br><br>
+            <a style="padding: 20px;" class="a-tags" href="https://youtu.be/7cdi_SdifkU?si=IpVv-82D-mp1Dp63" target="_blank">"I Thank God For The Blood" (feat. Calvin Drake) - July 14, 2023</a>
+            <br>
+            <br>
+            <br>
+        </div>
+        <hr>
+        <div class="footer">
+            <div>
+                <br>
+                <p>MY ACCOUNT</p>
+                <a class="a-tags" href="/login">Sign In</a><br>
+                <a class="a-tags" href="/register">Register</a><br>
+                <br>
+                <p>ABOUT</p>
+                <a class="a-tags" href="/about">Who We Are</a><br>
+                <a class="a-tags" href="#past_performances">Past Performances</a>
+            </div>
+            <br>
+            <div>
+                <p>HELP</p>
+                <a class="a-tags" href="/contact">Contact Us</a><br>
+                <br>
+                <p>LEGAL STUFF</p>
+                <a class="a-tags" href="/legal">Terms of Use</a><br>
+                <a class="a-tags" href="/legal#L2">Privacy Policy</a>
+            </div>
+            <br>
+            <p>Copyright Voices of Inspiration. All Rights Reserved</p>
+            <br>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+* {
+    font-family: 'Bruno Ace SC', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Flex', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* body img {
+    background-image: url(./assets/voi-pics/voi14-nice-removebg.png);
+    opacity: .9; */
+
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar {
+    display: none !important;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 50px;
+    height: 50px;
+    /* background-color: rgb(102, 1, 30, .8); */
+    background-color: rgba(0, 0, 0);
+    /* touch-action: none; */
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    padding-right: 15px;
+}
+
+
+.whole-container-box {
+    /* display: flex; */
+    background-color: rgba(0, 0, 0) !important;
+    height: auto;
+    overflow: hidden;
+    animation-name: changeColor;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+
+
+
+/* @keyframes changeColor {
+    0% {
+        background-color: rgba(168, 4, 205, 0.434);
+    }
+
+    20% {
+        background-color: rgba(21, 0, 255, 0.5);
+    }
+
+    30% {
+        background-color: rgba(158, 3, 130, 0.432);
+    }
+
+    100% {
+        background-color: rgba(5, 0, 7, 0.95);
+    }
+} */
+
+
+/* .whole-container-box img {
+    width: 100%;
+    opacity: .45;
+} */
+
+
+.title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.title p {
+    color: white;
+    /* font-size: 30px; */
+    text-align: left;
+}
+
+.main-title {
+    /* margin-left: 285px; */
+    font-size: 40px;
+    margin-bottom: -375px;
+    font-weight: 500;
+    z-index: 100;
+    opacity: 1;
+}
+
+.italicized {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 300;
+    margin-left: 10px;
+    margin-bottom: -375px;
+    z-index: 100;
+    color: white;
+    /* color: rgb(214, 214, 16, .9) !important; */
+    padding-bottom: 3px;
+}
+
+span {
+    /* color: rgb(102, 1, 30); */
+    color: yellow;
+    /* opacity: .95; */
+    text-shadow: 5px;
+}
+
+
+#bg-image {
+    /* transition: width 2s, height 4s, transform 2s; */
+    opacity: .7;
+    filter: grayscale(100%);
+    animation-name: pulsate, pulsate2;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    /* the above code makes the image move. */
+}
+
+@keyframes pulsate2 {
+    from {
+        width: 115%;
+    }
+
+    to {
+        width: 145%;
+    }
+}
+
+
+/* #no-margin {
+    margin-left: 0;
+    margin-bottom: 0;
+} */
+
+
+.text {
+    color: white;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.footer {
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+
+
+
+/* The animation code */
+/* @keyframes pulsate {
+    from {
+        background-color: red;
+    }
+
+    to {
+        background-color: yellow;
+    }
+} */
+
+
+
+
+@keyframes pulsate {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+
+    50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+    }
+
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+    }
+
+    100% {
+        background-color: rgb(0, 0, 0);
+        left: 0px;
+        top: 0px;
+    }
+}
+
+/* The element to apply the animation to */
+/* div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+} */
+
+
+
+/* to change it:
+change the amount of grayscale to allow some color in or not. Completely comment it out to return to the colors.
+change the opacity to make it more see-through or more bright and colorful and solid.
+comment out pulsate to stop the changing of the background colors.
+comment out pulsate2 to stop the image from moving. */
+
+
+
+
+button {
+    text-align: center;
+}
+
+.small_image {
+    width: 20%;
+}
+
+.a-tags {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.big {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.input {
+    width: 500px;
+    border-radius: 5px;
+}
+
+.input2 {
+    border-radius: 5px;
+}

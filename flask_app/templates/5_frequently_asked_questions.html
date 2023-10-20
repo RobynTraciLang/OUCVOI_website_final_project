@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:wght@100&family=Roboto+Flex:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+        rel="stylesheet">
+    <title>Frequently Asked Questions | The Voices of Inspiration | OUC</title>
+</head>
+
+<body>
+    <div class="whole-container-box">
+        <div class="header">
+            <a href="/"><img style="width: 35%; text-align: left; margin-left: 20px;" src="/static/assets/icons/VOI_logo.png" alt=""></a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/">HOME</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/about">ABOUT</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/director">DIRECTOR</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/events">EVENTS</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/donate">DONATE</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/faq">FAQ</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/shop">SHOP</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/login">LOGIN</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/register">JOIN</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/contact">CONTACT</a>
+            {% if "member_id" in session  %}
+                <a style="color: yellow; font-weight: bold;" href="logout">LOGOUT</a>
+            {% endif %}
+        </div>
+        <div>
+            <div class="text">
+                <h1 style="padding-top: 10px;" id="top">Frequently Asked Questions</h1>
+                <br>
+                <a href="#Q1">When are VOI rehearsals?</a><br>
+                <a href="#Q2">What kind of music does VOI sing?</a><br>
+                <a href="#Q3">Can anyone be a member of VOI?</a><br>
+                <a href="#Q4">What is the time commitment outside of rehearsal?</a><br>
+                <a href="#Q5">Does VOI tour?</a><br>
+                <a href="#Q6">Do I have to attend all performances?</a><br>
+                <a href="#Q7">Do choir members get paid?</a><br>
+                <a href="#Q8">Does VOI have a social media presence?</a><br>
+                <a href="#Q9">What attire is needed to sing with VOI?</a><br>
+                <a href="#Q10">Do VOI members pay choir dues?</a><br>
+                <br><br>
+            </div>
+            <div class="text">
+                <h2 id="Q1">When and where does VOI rehearse?</h2>
+                <p>VOI rehearsals take place in the choir room of the Oakwood University Church on Friday evenings at 7:00 pm, unless otherwise noted. Rehearsals end at 8:00 pm sharp.</p><br>
+                <a href="#top">Back to Top</a><br><br>
+                <br>
+                <h2 id="Q2">What kind of music does VOI sing?</h2>
+                <p>VOI sings gospel hits and standards from today, and classics from yesteryear. Members can also suggest songs to sing, subject to approval by our director. The majority of the songs in our repertoire are sung in three part harmony (soprano, alto, and tenor).</p><br>
+                <a href="#top">Back to Top</a><br><br>
+                <br>
+                <h2 id="Q3">Can anyone be a member of VOI?</h2>
+                <p>YES! We accept members of all ages and from all backgrounds, as long as you are able to sing in tune, remember your part, and sing with all your heart!</p><br>
+                <a href="#top">Back to Top</a><br><br>
+                <br>
+                <h2 id="Q4">What is the time commitment outside of rehearsal?</h2>
+                <p>Songs to learn for upcoming performances are sent out via our social media group and email regularly, and we ask that members take a few minutes out of every day to listen to the songs, so that when rehearsal and performance times come, the songs will already be in your spirit, and we will be able to make the most of our time together.</p><br>
+                <a href="#top">Back to Top</a><br><br>
+                <br>
+                <h2 id="Q5">Does VOI tour?</h2>
+                <p>Not yet! Occasionally we travel to other churches in the Huntsville area to provide music for special programs, but for the most part, we sing regularly at our home church, the Oakwood University Church (OUC), both for divine worship (Saturdays at 11am), and for special services.</p><br>
+                <a href="#top">Back to Top</a><br><br>
+                <br>
+                <h2 id="Q6">Do I have to attend all performances?</h2>
+                <p>No! Although we would love to see your smiling voice and hear your voice lifted up with us every time we perform, we realize that this choir is comprised of adults with busy lives, and everyone cannot be at every performance. We DO strongly encourage prospective members to carefully consider their schedules before committing to the choir, so that we can have at least some idea of who we can expect at MOST performances.</p><br>
+                <a href="#top">Back to Top</a><br><br>
+                <br>
+                <h2 id="Q7">Do choir members get paid?</h2>
+                <p>Not at this time! All members of VOI are currently volunteer singers.</p><br>
+                <a href="#top">Back to Top</a><br><br>
+                <br>
+                <h2 id="Q8">Does VOI have a social media presence?</h2>
+                <p>Yes! We have a dedicated Facebook group for disseminating information. Contact us via the contact link above to be added to that group.</p><br>
+                <a href="#top">Back to Top</a><br><br>
+                <br>
+                <h2 id="Q9">What attire is needed to sing with VOI?</h2>
+                <p>VOI robes are provided by the church, and anything can be worn underneath. We also occasionally wear all black for performances, depending on the occasion.</p><br>
+                <a href="#top">Back to Top</a><br><br>
+                <br>
+                <h2 id="Q10">Do VOI members pay choir dues?</h2>
+                <p>Not at this time! Our church takes care of any necessary operating expenses, making the choir free to join. However, we do encourage our members and supporters to donate whatever they can as often as possible, to pay for other choir expenses that occasionally arise, such as expenses for social events.</p><br>
+                <a href="#top">Back to Top</a><br><br>
+                <br>
+            </div>
+        </div>
+        <hr>
+        <div class="footer">
+            <div>
+                <br>
+                <p>MY ACCOUNT</p>
+                <a class="a-tags" href="/login">Sign In</a><br>
+                <a class="a-tags" href="/register">Register</a><br>
+                <br>
+                <p>ABOUT</p>
+                <a class="a-tags" href="/about">Who We Are</a><br>
+                <a class="a-tags" href="/events#past_performances">Past Performances</a>
+            </div>
+            <br>
+            <div>
+                <p>HELP</p>
+                <a class="a-tags" href="/contact">Contact Us</a><br>
+                <br>
+                <p>LEGAL STUFF</p>
+                <a class="a-tags" href="/legal">Terms of Use</a><br>
+                <a class="a-tags" href="/legal#L2">Privacy Policy</a>
+            </div>
+            <br>
+            <p>Copyright Voices of Inspiration. All Rights Reserved</p>
+            <br>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

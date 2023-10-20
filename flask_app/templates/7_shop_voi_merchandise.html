@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:wght@100&family=Roboto+Flex:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+        rel="stylesheet">
+    <title>Shop | The Voices of Inspiration | OUC</title>
+</head>
+
+<body>
+    <div class="whole-container-box">
+        <div class="header">
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/">HOME</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/about">ABOUT</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/director">DIRECTOR</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/events">EVENTS</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/donate">DONATE</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/faq">FAQ</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/shop">SHOP</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/login">LOGIN</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/register">JOIN</a>
+            <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/contact">CONTACT</a>
+            {% if "member_id" in session  %}
+                <a style="color: yellow; font-weight: bold;" href="logout">LOGOUT</a>
+            {% endif %}
+        </div>
+        <div class="big" class="text">
+            <img style="width: 20%; text-align: left; margin-left: 20px;" src="/static/assets/icons/VOI_logo.png" alt="voi_logo"><br><br>
+            <h2>VOI Shop - Coming Soon!</h2>
+            <br><br>
+            <strong>VOI Merchandise is coming soon! Check back here for t-shirts, sweaters, totes, music recordings, and more!</strong>
+            <br>
+            <p>Questions? <a href="/contact">Contact Us!</a></p>
+        </div>
+        <div class="footer">
+            <div>
+                <br>
+                <p>MY ACCOUNT</p>
+                <a class="a-tags" href="/login">Sign In</a><br>
+                <a class="a-tags" href="/register">Register</a><br>
+                <br>
+                <p>ABOUT</p>
+                <a class="a-tags" href="/about">Who We Are</a><br>
+                <a class="a-tags" href="/events#past_performances">Past Performances</a>
+            </div>
+            <br>
+            <div>
+                <p>HELP</p>
+                <a class="a-tags" href="/contact">Contact Us</a><br>
+                <br>
+                <p>LEGAL STUFF</p>
+                <a class="a-tags" href="/legal">Terms of Use</a><br>
+                <a class="a-tags" href="/legal#L2">Privacy Policy</a>
+            </div>
+            <br>
+            <p>Copyright Voices of Inspiration. All Rights Reserved</p>
+            <br>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

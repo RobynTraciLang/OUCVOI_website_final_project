@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:wght@100&family=Roboto+Flex:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+        rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+    <title>Contact Us | The Voices of Inspiration | OUC</title>
+</head>
+
+<body>
+    <div class="header">
+        <a href="/">HOME</a>
+        <a href="/about">ABOUT</a>
+        <a href="/director">DIRECTOR</a>
+        <a href="/events">EVENTS</a>
+        <a href="/donate">DONATE</a>
+        <a href="/faq">FAQ</a>
+        <a href="/shop">SHOP</a>
+        <a href="/login">LOGIN</a>
+        <a href="/register">JOIN</a>
+        <a href="/contact">CONTACT</a>
+        {% if "member_id" in session  %}
+            <a style="color: yellow; font-weight: bold;" href="logout">LOGOUT</a>
+        {% endif %}
+    </div>
+    <div style="background-color: rgb(128, 128, 128);">
+        <br>
+        <img style="width: 11%;" class="rounded mx-auto d-block"-center" src="/static/assets/icons/VOI_logo.png" alt=""><br>
+        <h1 style="text-align: center;">Contact Us</h1>
+            <br>
+            <form style="text-align: center;" action="/contact" method="post">
+                {% with messages = get_flashed_messages(category_filter=['contact']) %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p style="color: rgb(229, 229, 28);">{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div>
+                    <label class="form-label" for="first_name">First Name</label><br>
+                    <input class="input" class="form-control" type="text" name="first_name"><br><br>
+                </div>
+                <div>
+                    <label class="form-label" for="last_name">Last Name</label><br>
+                    <input class="input" class="form-control" type="text"name="last_name"><br><br>
+                </div>
+                <div>
+                    <label class="form-label" for="email">Email</label><br>
+                    <input class="input" class="form-control" type="text"name="email"><br><br>
+                </div>
+                <div>
+                    <label class="form-label" for="company_name">Company Name</label><br>
+                    <input class="input" class="form-control" type="text"name="company_name"><br><br>
+                </div>
+                <div>
+                    <label class="form-label" for="reason">Reason for reaching out</label><br>
+                    <textarea class="input" class="form-control" name="reason" id="reason" cols="10" rows="8"></textarea><br><br>
+                </div>
+                <div>
+                    <label class="form-label" for="how">How did you hear about us?</label><br>
+                    <select style="border-radius: 5px;" name="how" id="how">
+                        <option value="choose_an_option">Choose an option...</option>
+                        <option value="search">Search engine</option>
+                        <option value="friend">A friend told me/invited me</option>
+                        <option value="church">I heard you singing at church</option>
+                    </select><br><br>
+                </div>
+                <input style="padding: 5px; border-radius: 5px; background-color: yellow;" type="submit" value="Submit">
+                <br><br><br>
+            </form>
+        </div>
+        <div class="footer">
+            <div>
+                <br>
+                <p>MY ACCOUNT</p>
+                <a class="a-tags" href="/login">Sign In</a><br>
+                <a class="a-tags" href="/register">Register</a><br>
+                <br>
+                <p>ABOUT</p>
+                <a class="a-tags" href="/about">Who We Are</a><br>
+                <a class="a-tags" href="/events#past_performances">Past Performances</a>
+            </div>
+            <br>
+            <div>
+                <p>HELP</p>
+                <a class="a-tags" href="/contact">Contact Us</a><br>
+                <br>
+                <p>LEGAL STUFF</p>
+                <a class="a-tags" href="/legal">Terms of Use</a><br>
+                <a class="a-tags" href="/legal#L2">Privacy Policy</a>
+            </div>
+            <br>
+            <p>Copyright Voices of Inspiration. All Rights Reserved</p>
+            <br>
+        </div>
+</body>
+</html>
