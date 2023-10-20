@@ -1,0 +1,13 @@
+https://ocgmc.org/
+
+Nice website to emulate.
+
+Link to wireframe in Figma:
+
+https://www.figma.com/file/7DXQctY0tnRfu9ydkd3mQb/OUCVOI-Choir-Website---Coding-Dojo-Final-Project?type=design&node-id=2-4&mode=design&t=rXgmnWV3zgGOQXbR-0
+
+            {% if current_date < event.start_date < three_months_ahead %} (Jinja I have so far to try to limit dates shown)
+
+, current_date = current_date, future_date = three_months_ahead
+    current_date = datetime.now()
+    three_months_ahead = current_date + timedelta(days=90)

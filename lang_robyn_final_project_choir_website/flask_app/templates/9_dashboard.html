@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:wght@100&family=Roboto+Flex:wght@100;200&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+        rel="stylesheet">
+    <title>Welcome! | The Voices of Inspiration | OUC</title>
+</head>
+
+<body>
+    <div class="header">
+        <a href="/"><img style="width: 35%; text-align: left; margin-left: 20px;" src="/static/assets/icons/VOI_logo.png" alt=""></a>
+        <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/">HOME</a>
+        <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/about">ABOUT</a>
+        <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/director">DIRECTOR</a>
+        <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/events">EVENTS</a>
+        <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/donate">DONATE</a>
+        <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/faq">FAQ</a>
+        <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/shop">SHOP</a>
+        <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/login">LOGIN</a>
+        <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/register">JOIN</a>
+        <a onmouseover="changeColor2(this)" onmouseleave="changeBack2(this)" href="/contact">CONTACT</a>
+        <a style="color: yellow; font-weight: bold;" href="/logout">LOGOUT</a>
+    </div>
+
+    <div class="text">
+        <h1 style="padding: 50px;">Welcome to your VOI Dashboard, {{member.first_name}}!</h1>
+        <h2 style="color: yellow; width: 500px; margin: 0 auto; border-radius: 5px;" id="myBlinkingDiv" id="effects" onmouseover="changeColor(this)" onmouseleave="changeBack(this)">Thank you for being a part of VOI!</h2><br><br><br>
+        {% for event in events %}
+            <div style="border: 2px 2px solid white;">
+                <hr style="width: 500px; margin: 0 auto;">
+                <br>
+                <h3>Songs to Learn <br>for <br>{{event.start_date.strftime('%B %d, %Y')}}:</h3><br>
+                    {% for i in range(event.songs|length) %}
+                        {% if event.songs[i].link == None %}
+                            <p style="background-color: rgb(84, 3, 3); width: 500px; padding: 10px; margin: 0 auto; color: yellow; font-weight: bold;">No songs chosen yet! Check back soon.</p>
+                        {% else %}
+                            <div style="background-color: rgb(128, 128, 128); width: 500px; padding: 10px; margin: 0 auto;">
+                                <a class="a-tags" href="{{event.songs[i].link}}" target="_blank">{{event.songs[i].title}}</a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <br>
+                <hr style="width: 500px; margin: 0 auto;">
+                <br><br><br>
+            </div>
+        {% endfor %}
+            <br><br><br>
+            <hr id="create" style="width: 500px; margin: 0 auto;">
+            <br>
+            <h2>Suggest a Song:</h2><br>
+            {% with messages = get_flashed_messages(category_filter=['suggestions']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p style="color: yellow;">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action="/create_suggestion" method="post">
+                <div>
+                    <label for="title">Title:</label><br>
+                    <input class="input2" type="text" name="title"><br><br>
+                </div>
+                <div>
+                    <label for="artist">Artist:</label><br>
+                    <input class="input2" type="text"name="artist"><br><br>
+                </div>
+                <div>
+                    <label for="link">YouTube Link:</label><br>
+                    <input class="input2" type="text"name="link"><br><br>
+                </div>
+                <br>
+                <input style="padding: 7px; border-radius: 5px; background-color: yellow;" type="submit" value="Submit">
+            </form>
+            <br>
+            <hr style="width: 500px; margin: 0 auto;">
+            <br><br><br><br><br>
+            <hr style="width: 500px; margin: 0 auto;" id="suggestions">
+            <br>
+            <h2>Your Song Suggestions:</h2><br>
+            {% for suggestion in suggestions %}
+                {% if suggestion.member_id == session.member_id %}
+                <div>
+                    <strong><span style="color: yellow;">{{suggestion.title}}</span> <br><br>by <br><br> {{suggestion.artist}}</strong><br><br>
+                    <a href="{{suggestion.link}}" target="_blank">{{suggestion.link}}</a><br>
+                    <p><a href="/edit_suggestion/{{suggestion.id}}/{{suggestion.member_id}}">edit</a> | <a href="/delete/{{suggestion.id}}">delete</a></p>
+                    <br><br>
+                </div>
+                {% endif %}
+            {% endfor %}
+            <hr style="width: 500px; margin: 0 auto;">
+            <br><br>
+        </div>
+        <hr>
+        <div class="footer">
+            <div>
+                <br>
+                <p>MY ACCOUNT</p>
+                <a class="a-tags" href="/login">Sign In</a><br>
+                <a class="a-tags" href="/register">Register</a><br>
+                <br>
+                <p>ABOUT</p>
+                <a class="a-tags" href="/about">Who We Are</a><br>
+                <a class="a-tags" href="/events#past_performances">Past Performances</a>
+            </div>
+            <br>
+            <div>
+                <p>HELP</p>
+                <a class="a-tags" href="/contact">Contact Us</a><br>
+                <br>
+                <p>LEGAL STUFF</p>
+                <a class="a-tags" href="/legal">Terms of Use</a><br>
+                <a class="a-tags" href="/legal#L2">Privacy Policy</a>
+            </div>
+            <br>
+            <p>Copyright Voices of Inspiration. All Rights Reserved</p>
+            <br>
+        </div>
+        <script src="/static/script.js"></script>
+</body>
+</html>
